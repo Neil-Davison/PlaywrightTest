@@ -13,9 +13,12 @@ const testData = yaml.load(
 for (const user of testData.users) {
     for (const product of testData.Products) {
         test(`User ${user.username} checks ${product.category} sorted by '${product.sortOption}'`, async ({ page }) => {
+
+            // Declare trequired pages.
             const loginPage = new LoginPage(page);
             const productPage = new ProductPage(page, product.menuText, product.headingText);
 
+            // Login Process.
             await loginPage.launchDemoWebshop(testData.URLs.base);
             await loginPage.openLoginPage();
             await loginPage.enterUserName(user.username);
@@ -23,16 +26,19 @@ for (const user of testData.users) {
             await loginPage.checkRememberMe();
             await loginPage.clickLoginSubmit();
 
+            // Product Selection.
             await productPage.openCategory();
 
+                // Computers & Electronics do not have enough items to require a sort.
                 if (product.category === "Computers" || product.category === "Electronics") {
                     console.log("Sort option not required for " + product.category + " category!")
                 } else {
                     await productPage.setSortOption(product.sortOption);      
                 }
 
-            await expect(page).toHaveURL(/[\w-]+/); // optional: regex check for category URL
+            await expect(page).toHaveURL(/[\w-]+/); // optional: regex check for category URL.
 
+            // Logout out of the app.
             await loginPage.processLogoutPage();
         });
     }

@@ -7,7 +7,8 @@ import { ProductPage } from '../pages/demoWebShop_Product';
 
 // Load YAML data
 const testData = yaml.load(
-    fs.readFileSync('C:\\Users\\NeilDavison\\PlaywrightTest\\test-data\\testData1.yaml', 'utf8')
+    fs.readFileSync('test-data\\testData1.yaml', 'utf8')
+    //fs.readFileSync('C:\\Users\\NeilDavison\\PlaywrightTest\\test-data\\testData1.yaml', 'utf8')
 ) as any;
 
 for (const user of testData.users) {

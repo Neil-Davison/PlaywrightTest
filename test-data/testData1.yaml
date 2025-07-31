@@ -1,0 +1,45 @@
+users:
+  - username: "Test02.shopper@dws.com"
+    password: "Test12345"
+
+  - username: "Test03.shopper@dws.com"
+    password: "Test23456"
+
+URLs: 
+    base: "https://demowebshop.tricentis.com/"
+
+Products:
+  - category: "Books"
+    menuText: "Books"
+    headingText: "Books"
+    sortOption: "Price: High to Low"
+
+  - category: "Computers"
+    menuText: "Computers"
+    headingText: "Computers"
+    sortOption: "Name: A to Z"
+
+  - category: "Electronics"
+    menuText: "Electronics"
+    headingText: "Electronics"
+    sortOption: "Created on"
+
+  - category: "Apparel & Shoes"
+    menuText: "Apparel & Shoes"
+    headingText: "Apparel & Shoes"
+    sortOption: "Price: Low to High"
+
+  - category: "Digital downloads"
+    menuText: "Digital downloads"
+    headingText: "Digital downloads"
+    sortOption: "Price: High to Low"
+
+  - category: "Jewelry"
+    menuText: "Jewelry"
+    headingText: "Jewelry"
+    sortOption: "Name: A to Z"
+
+  - category: "Gift Cards"
+    menuText: "Gift Cards"
+    headingText: "Gift Cards"
+    sortOption: "Created on"
